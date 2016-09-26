@@ -1,44 +1,26 @@
 Vagrant Infrastructure Repository
 ============
 
-This project contains all scripts to setup a deployment infrastructure for
-applications using Docker.
-Vagrant is used to provision the three VMs (Jenkins Instance, Docker Registry, Application Node)
+This project contains all scripts to setup a data streaming infrastructure with kafka, apache spark
+and apache toree using jupyter notebook.
+Vagrant is used to provision the two VMs (Kafka Instance, Spark + Toree + Jupyter)
 
-The folder "jenkins_jobs" contains two pre-configured jobs that deploy either a
-Python or a NodeJS application to the application node.
-
-The two jobs basically version applications over infrastructure using the Jenkins
-build number as the versioning scheme. A simple mechanism but proven stable.
-
-The Jenkins jobs are far away from perfect:
-- missing checks if docker remote api calls fail
-- missing proper check for already running instance. Killing running instance is done by decrementing the build number and stopping the referring container.
-
-
-The folder "jenkins_plugins" contains the plugins needed to run these jobs (e.g. the Git-Plugin).
+The folder "notebooks" contains pre-written Jupyter Notebooks.
 
 The "scripts" folder contains all needed bash scripts to bootstrap the provisioning
-process for installing docker, jenkins or spin up the registry on the different VMs.
+process to install and run kafka, spark and spin up jupyter notebook server.
 
 
-Run Jenkins
+Run Kafka
 -----------
 
 ```bash
-vagrant up jenkins
+vagrant up kafka
 ```
 
-Run Docker Registry
+Run Spark + Jupyter
 --------------
 
 ```bash
-vagrant up registry
-```
-
-Run Deployment Node
---------------
-
-```bash
-vagrant up node
+vagrant up datascience
 ```
