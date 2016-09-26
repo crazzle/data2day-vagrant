@@ -24,3 +24,5 @@ Run Spark + Jupyter
 ```bash
 vagrant up datascience
 ```
+
+As an end-2-end example this repo can be used together with PyPoSim 
