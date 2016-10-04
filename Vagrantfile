@@ -24,6 +24,7 @@ Vagrant.configure(2) do |config|
     d.vm.network "private_network", ip: "10.100.198.201"
     d.vm.provision :shell, path: "scripts/bootstrap_spark.sh"
     d.vm.provision :shell, path: "scripts/bootstrap_datascience_install.sh"
+    d.vm.provision :file, source: "notebooks/ScalaSparkStreaming.ipynb", destination: "~/ScalaSparkStreaming.ipynb"
     d.vm.provision :shell, path: "scripts/bootstrap_datascience_start.sh", run: "always"
     d.vm.provider "virtualbox" do |v|
       v.memory = 3072
