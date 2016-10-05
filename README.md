@@ -25,4 +25,6 @@ Run Spark + Jupyter
 vagrant up datascience
 ```
 
+Type "10.100.198.201:8888" in your Browser to open the Jupyter Notebook
+
 As an end-2-end example this repo can be used together with PyPoSim 
